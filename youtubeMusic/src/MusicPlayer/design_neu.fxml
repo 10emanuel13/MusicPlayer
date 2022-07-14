@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="body-background" stylesheets="@../../resources/css/css_musicplayer.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicPlayer.Controller">
+   <children>
+      <HBox layoutY="451.0" prefHeight="62.0" prefWidth="200.0" styleClass="bottom_bar_color" stylesheets="@../../resources/css/css_musicplayer.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="previousButton" mnemonicParsing="false" onAction="#previousMedia" prefHeight="37.0" prefWidth="51.0" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css" textFill="#ebe7e7">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseMedia" prefHeight="24.0" prefWidth="73.0" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css" textFill="#fffdfd">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/pause.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="playButton" mnemonicParsing="false" onAction="#playMedia" prefHeight="21.0" prefWidth="65.0" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css" textFill="#f8f8f8">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextMedia" prefHeight="25.0" prefWidth="84.0" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css" textFill="#f6f6f6">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/forward.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetMedia" prefHeight="51.0" prefWidth="117.0" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css" text="Reset" textFill="#f8f8f8">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/pfote.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ComboBox fx:id="speedBox" editable="true" onAction="#changeSpeed" prefHeight="25.0" prefWidth="97.0" promptText="Speed" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Label prefHeight="17.0" prefWidth="53.0" text="Volume" textFill="#f8f8f8">
+               <HBox.margin>
+                  <Insets left="40.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <Slider fx:id="volumeSlider">
+               <HBox.margin>
+                  <Insets left="25.0" top="20.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="H_RESIZE" />
+               </cursor>
+            </Slider>
+            <ImageView fitHeight="65.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="64.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <BorderPane layoutX="39.0" layoutY="224.0" prefHeight="200.0" prefWidth="200.0" styleClass="body-background" stylesheets="@../../resources/css/css_musicplayer.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="438.0" prefWidth="800.0" styleClass="body-background" stylesheets="@../../resources/css/css_musicplayer.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="51.0" layoutY="133.0" prefHeight="40.0" prefWidth="73.0" text="Catify" textFill="#bdd1d4f2">
+                     <font>
+                        <Font name="Georgia Pro Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="369.0" layoutY="30.0" prefHeight="16.0" prefWidth="261.0" styleClass="search-background" stylesheets="@../../resources/css/css_musicplayer.css" />
+                  <VBox alignment="CENTER" layoutX="1.0" layoutY="212.0" prefHeight="198.0" prefWidth="50.0" styleClass="Menu-bar-background" stylesheets="@../../resources/css/css_musicplayer.css">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#switchToScene1" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fx:id="home" fitHeight="32.0" fitWidth="30.0" onDragDetected="#switchToScene1" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/icons8-home-32.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button mnemonicParsing="false" onAction="#switchToScene2" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css">
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="27.0" onDragDetected="#switchToScene2" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/playlist.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="148.0" layoutY="120.0" prefHeight="318.0" prefWidth="652.0">
+                     <children>
+                        <Pane prefHeight="318.0" prefWidth="715.0">
+                           <children>
+                              <HBox alignment="BASELINE_LEFT" layoutX="326.0" prefHeight="318.0" prefWidth="288.0" />
+                              <Label layoutX="64.0" layoutY="10.0" prefHeight="54.0" prefWidth="454.0" text="you are listening at the moment" textFill="#fbfafa">
+                                 <font>
+                                    <Font name="Rockwell Condensed" size="42.0" />
+                                 </font>
+                              </Label>
+                              <ProgressBar fx:id="songProgressBar" layoutX="159.0" layoutY="286.0" prefWidth="200.0" progress="0.0" />
+                              <Label layoutX="189.0" layoutY="264.0" prefHeight="17.0" prefWidth="140.0" text="Progress Bar" textFill="#d2d2d2">
+                                 <font>
+                                    <Font name="Bell MT" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="songLabel" layoutX="64.0" layoutY="100.0" prefHeight="55.0" prefWidth="328.0" text="- SongLabel" textFill="#c0b7b7">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="playNow" layoutX="405.0" layoutY="119.0" onDragDetected="#nowPlaying" text="(now playing)" textFill="#f4f0f0" visible="false" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <ImageView fx:id="catify" fitHeight="126.0" fitWidth="177.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/catify.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="424.0" layoutY="25.0" prefHeight="25.0" prefWidth="216.0" promptText="Suche Künstler, Album &amp; Playlist" styleClass="transparent" stylesheets="@../../resources/css/css_musicplayer.css" />
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
